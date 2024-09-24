@@ -108,7 +108,7 @@ const createTask = asyncHandler(async (req, res) => {
 });
 
 const updateTask = asyncHandler(async (req,res)=>{
-  const { taskId } = req.query;
+  const { taskId } = req.params;
 
   const user = await User.findById(req.user?._id);
   if (!user) throw new ApiError(400, "User Not Found!");
