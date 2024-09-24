@@ -72,7 +72,7 @@ Refer To The Provided .env.sample File
     "email": "john@example.com",
     "password": "Password@123"
   }
-   // or
+    or
   {
     "userName": "johndoe",
     "password": "Password@123"
@@ -202,4 +202,4 @@ Check out the Entity-Relationship Diagram (ERD) for the Task Manager API [here](
 
 You can test the API endpoints using Postman by importing the collection found in the `Task Manager.postman_collection.json` file.
 
-- **Base URL**: `http://localhost:3000/api/v1`# Task-Manager
+- **Base URL**: `http://localhost:3000/api/v1`
