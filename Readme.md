@@ -28,7 +28,7 @@ Ensure you have the environment variables set up for the project like:
 
 ```bash
 DB_Name=task-manager
-MONGO_URI=mongodb://localhost:27017/taskmanager
+MONGO_URI=mongodb://localhost:27017/task-manager
 JWT_SECRET=your_secret_key
 
 Refer To The Provided .env.sample File
@@ -67,7 +67,7 @@ Refer To The Provided .env.sample File
 ##### **POST /user/login**
 - **Description**: Log in a user and return a JWT token.
 - **Request Body**:
-  ```json
+  ```sh
   {
     "email": "john@example.com",
     "password": "Password@123"
@@ -79,7 +79,7 @@ Refer To The Provided .env.sample File
   }
   ```
 - **Response**:
-  ```json
+  ```sh
   {
     "statusCode": 200,
     "success": true,
