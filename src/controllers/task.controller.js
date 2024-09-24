@@ -56,7 +56,7 @@ const getAllTasks = asyncHandler(async (req, res) => {
 });
 
 const getTaskById = asyncHandler(async (req, res) => {
-  const { taskId } = req.query;
+  const { taskId } = req.params;
   
   // No Longer Needed Since It's Getting Handled By AJV.
   // if (!taskId) throw new ApiError(200, "Couldn't Find Video ID!");
@@ -126,7 +126,7 @@ const updateTask = asyncHandler(async (req,res)=>{
 });
 
 const deleteTask = asyncHandler(async (req,res)=>{
-  const { taskId } = req.query;
+  const { taskId } = req.params;
 
   const user = await User.findById(req.user?._id);
   if (!user) throw new ApiError(400, "User Not Found!");
@@ -142,7 +142,7 @@ const deleteTask = asyncHandler(async (req,res)=>{
 
   res
     .status(200)
-    .json(new ApiResponse(200, true, "Event Deleted Successfully!", deletedTask));
+    .json(new ApiResponse(200, true, "Task Deleted Successfully!", deletedTask));
 });
 
 export { getAllTasks, getTaskById, createTask, updateTask, deleteTask };

@@ -128,6 +128,22 @@ Refer To The Provided .env.sample File
   }
   ```
 
+##### **GET /task/getAllTasks/**
+- **Description**: Retrieve paginated tasks based on the passed filters like: search, page, limit, status, sortBy, sortType.
+- **Response**:
+  ```json
+  {
+    "status": true,
+    "data": {
+      "_id": "task-id",
+      "title": "My Task",
+      "description": "This is a task description",
+      "dueDate": "2024-09-23T00:00:00Z",
+      "status": "pending"
+    }
+  }
+  ```
+
 ##### **GET /task/getTaskById/:id**
 - **Description**: Retrieve a specific task by its ID.
 - **Response**:
@@ -202,4 +218,4 @@ Check out the Entity-Relationship Diagram (ERD) for the Task Manager API [here](
 
 You can test the API endpoints using Postman by importing the collection found in the `Task Manager.postman_collection.json` file.
 
-- **Base URL**: `http://localhost:3000/api/v1`# Task-Manager
+- **Base URL**: `http://localhost:3000/api/v1`
