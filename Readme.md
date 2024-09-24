@@ -72,7 +72,7 @@ Refer To The Provided .env.sample File
     "email": "john@example.com",
     "password": "Password@123"
   }
-    or
+   // or
   {
     "userName": "johndoe",
     "password": "Password@123"
