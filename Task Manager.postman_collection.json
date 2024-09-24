@@ -188,13 +188,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/login",
+									"raw": "http://localhost:3000/api/v1/user/login",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
 									"path": [
+										"api",
+										"v1",
+										"user",
 										"login"
 									]
 								}
@@ -257,11 +260,11 @@
 								},
 								{
 									"key": "Set-Cookie",
-									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYwNDg5MDNmNzIzNGQ1MTc2NTUyNGUiLCJlbWFpbCI6InBhcmFnNzE1NUBnbWFpbC5jb20iLCJ1c2VyTmFtZSI6InBhcmFnIiwiaWF0IjoxNzI3MDIzMjY3LCJleHAiOjE3MjcxMDk2Njd9.lucxXwSMluB4T9azdxV2ntwfKbPlUGeHDmW08Khq664; Path=/; HttpOnly; Secure"
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYxODIyZWU0MTkxODQxNzYxNzA1OWUiLCJlbWFpbCI6InBhcmFnNzE1NUBnbWFpbC5jb20iLCJ1c2VyTmFtZSI6InBhcmFnIiwiaWF0IjoxNzI3MTcwODQzLCJleHAiOjE3MjcyNTcyNDN9.0FO_kscsypJ6tH7AHHQFgY1n9c_5upJF9x4R67oWunY; Path=/; HttpOnly; Secure"
 								},
 								{
 									"key": "Set-Cookie",
-									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYwNDg5MDNmNzIzNGQ1MTc2NTUyNGUiLCJpYXQiOjE3MjcwMjMyNjcsImV4cCI6MTcyNzg4NzI2N30.nc6U-3S3DaR9QiHGpnrvxwMlRizQLX16eOkbkqK1YIk; Path=/; HttpOnly; Secure"
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYxODIyZWU0MTkxODQxNzYxNzA1OWUiLCJpYXQiOjE3MjcxNzA4NDMsImV4cCI6MTcyODAzNDg0M30.0eau3xFUGDoblVJo-oRVclQDkDv215IUZ5gAD8o-oAQ; Path=/; HttpOnly; Secure"
 								},
 								{
 									"key": "Content-Type",
@@ -269,15 +272,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "715"
+									"value": "704"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"2cb-Evn09AfvvTeJMGt29Gxz9DjwCvA\""
+									"value": "W/\"2c0-ylEX2uK73S21qGDqFRB/dgTpmaA\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 22 Sep 2024 16:41:07 GMT"
+									"value": "Tue, 24 Sep 2024 09:40:43 GMT"
 								},
 								{
 									"key": "Connection",
@@ -289,7 +292,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User Logged In Successfully!\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYwNDg5MDNmNzIzNGQ1MTc2NTUyNGUiLCJlbWFpbCI6InBhcmFnNzE1NUBnbWFpbC5jb20iLCJ1c2VyTmFtZSI6InBhcmFnIiwiaWF0IjoxNzI3MDIzMjY3LCJleHAiOjE3MjcxMDk2Njd9.lucxXwSMluB4T9azdxV2ntwfKbPlUGeHDmW08Khq664\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYwNDg5MDNmNzIzNGQ1MTc2NTUyNGUiLCJpYXQiOjE3MjcwMjMyNjcsImV4cCI6MTcyNzg4NzI2N30.nc6U-3S3DaR9QiHGpnrvxwMlRizQLX16eOkbkqK1YIk\",\n        \"loggedInUser\": {\n            \"_id\": \"66f048903f7234d51765524e\",\n            \"userName\": \"parag\",\n            \"email\": \"parag7155@gmail.com\",\n            \"tasks\": [],\n            \"createdAt\": \"2024-09-22T16:40:48.287Z\",\n            \"updatedAt\": \"2024-09-22T16:40:48.287Z\"\n        }\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User Logged In Successfully!\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYxODIyZWU0MTkxODQxNzYxNzA1OWUiLCJlbWFpbCI6InBhcmFnNzE1NUBnbWFpbC5jb20iLCJ1c2VyTmFtZSI6InBhcmFnIiwiaWF0IjoxNzI3MTcwODQzLCJleHAiOjE3MjcyNTcyNDN9.0FO_kscsypJ6tH7AHHQFgY1n9c_5upJF9x4R67oWunY\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmYxODIyZWU0MTkxODQxNzYxNzA1OWUiLCJpYXQiOjE3MjcxNzA4NDMsImV4cCI6MTcyODAzNDg0M30.0eau3xFUGDoblVJo-oRVclQDkDv215IUZ5gAD8o-oAQ\",\n        \"loggedInUser\": {\n            \"_id\": \"66f1822ee41918417617059e\",\n            \"userName\": \"parag\",\n            \"email\": \"parag7155@gmail.com\",\n            \"createdAt\": \"2024-09-23T14:58:54.618Z\",\n            \"updatedAt\": \"2024-09-24T09:38:50.392Z\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -618,13 +621,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/getCurrentUser",
+									"raw": "http://localhost:3000/api/v1/user/getCurrentUser",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "3000",
 									"path": [
+										"api",
+										"v1",
+										"user",
 										"getCurrentUser"
 									]
 								}
@@ -691,15 +697,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "258"
+									"value": "241"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"102-bZOBm3akZsm/bd2ywNR9t8znMP8\""
+									"value": "W/\"f1-imFMc28tZswAkswkyRWMaEGsP68\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 22 Sep 2024 17:58:53 GMT"
+									"value": "Tue, 24 Sep 2024 09:38:57 GMT"
 								},
 								{
 									"key": "Connection",
@@ -711,7 +717,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User Fetched Successfully!\",\n    \"data\": {\n        \"_id\": \"66f048903f7234d51765524e\",\n        \"userName\": \"parag yadav\",\n        \"email\": \"parag5188@gmail.com\",\n        \"tasks\": [],\n        \"createdAt\": \"2024-09-22T16:40:48.287Z\",\n        \"updatedAt\": \"2024-09-22T17:57:34.781Z\"\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User Fetched Successfully!\",\n    \"data\": {\n        \"_id\": \"66f1822ee41918417617059e\",\n        \"userName\": \"parag\",\n        \"email\": \"parag7155@gmail.com\",\n        \"createdAt\": \"2024-09-23T14:58:54.618Z\",\n        \"updatedAt\": \"2024-09-24T09:38:50.392Z\"\n    }\n}"
 						}
 					]
 				},
@@ -982,17 +988,174 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/task/getAllTasks",
+							"raw": "{{server}}/task/getAllTasks?search=go for a walk&page=1&limit=5&status=pending&sortBy=createdAt&sortType=asc",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"task",
 								"getAllTasks"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "go for a walk"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "status",
+									"value": "pending"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortType",
+									"value": "asc"
+								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get All Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/task/getAllTasks?search=go for a walk&page=1&limit=5&status=pending&sortBy=createdAt&sortType=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"task",
+										"getAllTasks"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "go for a walk"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "status",
+											"value": "pending"
+										},
+										{
+											"key": "sortBy",
+											"value": "createdAt"
+										},
+										{
+											"key": "sortType",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "447"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bf-t6IKef9KR0UcWlVX6Y81xLYj2WA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Sep 2024 09:00:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"OK\",\n    \"data\": {\n        \"docs\": [\n            {\n                \"_id\": \"66f1836420525a8b40e9c447\",\n                \"title\": \"go for a walk\",\n                \"description\": \"trying to stay fit :)\",\n                \"status\": \"pending\",\n                \"dueDate\": \"2024-09-30T07:00:00.000Z\",\n                \"createdAt\": \"2024-09-23T15:04:04.912Z\",\n                \"updatedAt\": \"2024-09-23T15:04:04.912Z\",\n                \"score\": 1.5\n            }\n        ],\n        \"totalDocs\": 1,\n        \"limit\": 5,\n        \"page\": 1,\n        \"totalPages\": 1,\n        \"pagingCounter\": 1,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": false,\n        \"prevPage\": null,\n        \"nextPage\": null\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Task By Id",
@@ -1000,19 +1163,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/task/getTaskById?taskId=66f1625746ee737b848ff630",
+							"raw": "{{server}}/task/getTaskById/66f1836420525a8b40e9c447",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"task",
-								"getTaskById"
-							],
-							"query": [
-								{
-									"key": "taskId",
-									"value": "66f1625746ee737b848ff630"
-								}
+								"getTaskById",
+								"66f1836420525a8b40e9c447"
 							]
 						}
 					},
@@ -1023,19 +1181,18 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}/task/getTaskById?taskId=66f1625746ee737b848ff630",
+									"raw": "http://localhost:3000/api/v1/task/getTaskById/66f1625746ee737b848ff630",
+									"protocol": "http",
 									"host": [
-										"{{server}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
+										"api",
+										"v1",
 										"task",
-										"getTaskById"
-									],
-									"query": [
-										{
-											"key": "taskId",
-											"value": "66f1625746ee737b848ff630"
-										}
+										"getTaskById",
+										"66f1625746ee737b848ff630"
 									]
 								}
 							},
@@ -1166,11 +1323,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/task/createTask",
+									"raw": "http://localhost:3000/api/v1/task/createTask",
+									"protocol": "http",
 									"host": [
-										"{{server}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
+										"api",
+										"v1",
 										"task",
 										"createTask"
 									]
@@ -1238,15 +1399,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "316"
+									"value": "353"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"13c-u34YgGeC6vGP1izYRpZr81bluoQ\""
+									"value": "W/\"161-NInj/386kS+o48JBhu6NS2D6dDg\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 23 Sep 2024 12:43:03 GMT"
+									"value": "Mon, 23 Sep 2024 15:04:04 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1258,7 +1419,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Task Created Successfully!\",\n    \"data\": {\n        \"owner\": \"66f05bc70ec553ea86637f39\",\n        \"title\": \"go for a walk\",\n        \"description\": \"trying to stay fit :)\",\n        \"status\": \"pending\",\n        \"_id\": \"66f1625746ee737b848ff630\",\n        \"createdAt\": \"2024-09-23T12:43:03.814Z\",\n        \"updatedAt\": \"2024-09-23T12:43:03.814Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Task Created Successfully!\",\n    \"data\": {\n        \"owner\": \"66f1822ee41918417617059e\",\n        \"title\": \"go for a walk\",\n        \"description\": \"trying to stay fit :)\",\n        \"status\": \"pending\",\n        \"dueDate\": \"2024-09-30T07:00:00.000Z\",\n        \"_id\": \"66f1836420525a8b40e9c447\",\n        \"createdAt\": \"2024-09-23T15:04:04.912Z\",\n        \"updatedAt\": \"2024-09-23T15:04:04.912Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1277,19 +1438,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{server}}/task/updateTask?taskId=66f1625746ee737b848ff630",
+							"raw": "{{server}}/task/updateTask/66f1625746ee737b848ff630",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"task",
-								"updateTask"
-							],
-							"query": [
-								{
-									"key": "taskId",
-									"value": "66f1625746ee737b848ff630"
-								}
+								"updateTask",
+								"66f1625746ee737b848ff630"
 							]
 						}
 					},
@@ -1309,19 +1465,18 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/task/updateTask?taskId=66f1625746ee737b848ff630",
+									"raw": "http://localhost:3000/api/v1/task/updateTask/66f1625746ee737b848ff630",
+									"protocol": "http",
 									"host": [
-										"{{server}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
+										"api",
+										"v1",
 										"task",
-										"updateTask"
-									],
-									"query": [
-										{
-											"key": "taskId",
-											"value": "66f1625746ee737b848ff630"
-										}
+										"updateTask",
+										"66f1625746ee737b848ff630"
 									]
 								}
 							},
@@ -1417,19 +1572,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/task/deleteTask?taskId=66f1625746ee737b848ff630",
+							"raw": "{{server}}/task/deleteTask/66f1625746ee737b848ff630",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"task",
-								"deleteTask"
-							],
-							"query": [
-								{
-									"key": "taskId",
-									"value": "66f1625746ee737b848ff630"
-								}
+								"deleteTask",
+								"66f1625746ee737b848ff630"
 							]
 						}
 					},
@@ -1440,19 +1590,18 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{server}}/task/deleteTask?taskId=66f1625746ee737b848ff630",
+									"raw": "http://localhost:3000/api/v1/task/deleteTask/66f1625746ee737b848ff630",
+									"protocol": "http",
 									"host": [
-										"{{server}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
+										"api",
+										"v1",
 										"task",
-										"deleteTask"
-									],
-									"query": [
-										{
-											"key": "taskId",
-											"value": "66f1625746ee737b848ff630"
-										}
+										"deleteTask",
+										"66f1625746ee737b848ff630"
 									]
 								}
 							},
