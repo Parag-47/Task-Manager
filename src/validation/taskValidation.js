@@ -22,7 +22,6 @@ const descriptionSchema = { type: "string", maxLength: 1000 };
 const statusSchema = {
   type: "string",
   enum: ["pending", "in-progress", "completed"],
-  default: "pending",
 };
 const dueDateSchema = { type: "string", format: "date-time" };
 

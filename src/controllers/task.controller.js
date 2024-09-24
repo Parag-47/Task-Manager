@@ -5,7 +5,7 @@ import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
 const getAllTasks = asyncHandler(async (req, res) => {
-  const { search, page = 1, limit = 10, status="pending", sortBy = 'createdAt', sortType = 'desc' } = req.query;
+  const { search, page = 1, limit = 10, status, sortBy = 'createdAt', sortType = 'desc' } = req.query;
 
   const options = {
     page: page,
