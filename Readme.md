@@ -55,7 +55,7 @@ Refer To The Provided .env.sample File
     "success": true,
     "message": "User Registered Successfully!",
     "data": {
-      "_id": "66f048903f7234f52866624e",
+      "_id": "userId",
       "userName": "johndoe",
       "email": "john@example.com",
       "createdAt": "RFC 3339 Date-Time Format",
@@ -72,7 +72,7 @@ Refer To The Provided .env.sample File
     "email": "john@example.com",
     "password": "Password@123"
   }
-    or
+    <!-- or -->
   {
     "userName": "johndoe",
     "password": "Password@123"
@@ -88,7 +88,7 @@ Refer To The Provided .env.sample File
       "accessToken": "accessToken",
       "refreshToken": "refreshToken",
       "loggedInUser": {
-        "_id": "66f048903f7234d51765524e",
+        "_id": "userId",
         "userName": "johndoe",
         "email": "john@example.com",
         "createdAt": "RFC 3339 Date-Time Format",
@@ -110,63 +110,87 @@ Refer To The Provided .env.sample File
   {
     "title": "My Task",
     "description": "This is a task description",
-    "dueDate": "2024-09-23T00:00:00Z"
+    "dueDate": "RFC 3339 Date-Time Format",
+    "status": "pending"
   }
   ```
 - **Response**:
   ```json
   {
-    "status": true,
+    "statusCode": 201,
+    "success": true,
     "message": "Task Created Successfully!",
     "data": {
-      "_id": "task-id",
+      "_id": "taskId",
       "title": "My Task",
       "description": "This is a task description",
-      "dueDate": "2024-09-23T00:00:00Z",
+      "dueDate": "RFC 3339 Date-Time Format",
       "status": "pending"
     }
   }
   ```
 
-##### **GET /task/getAllTasks/**
-- **Description**: Retrieve paginated tasks based on the passed filters like: search, page, limit, status, sortBy, sortType.
+##### **GET /task/getAllTasks**
+- **Description**: Retrieve paginated tasks based on the passed filters like: `search, page, limit, status, sortBy, sortType`
 - **Response**:
   ```json
   {
-    "status": true,
+    "statusCode": 200,
+    "success": true,
+    "message": "OK",
     "data": {
-      "_id": "task-id",
-      "title": "My Task",
-      "description": "This is a task description",
-      "dueDate": "2024-09-23T00:00:00Z",
-      "status": "pending"
+      "docs": [
+        {
+          "_id": "taskId",
+          "title": "go for a walk",
+          "description": "trying to stay fit :)",
+          "status": "pending",
+          "dueDate": "RFC 3339 Date-Time Format",
+          "createdAt": "RFC 3339 Date-Time Format",
+          "updatedAt": "RFC 3339 Date-Time Format",
+          "score": 1.5
+        }
+      ],
+    "totalDocs": 1,
+    "limit": 5,
+    "page": 1,
+    "totalPages": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": false,
+    "prevPage": null,
+    "nextPage": null
     }
   }
   ```
 
-##### **GET /task/getTaskById/:id**
-- **Description**: Retrieve a specific task by its ID.
+##### **GET /task/getTaskById/:taskId**
+- **Description**: Retrieve a specific task by its Id.
 - **Response**:
   ```json
   {
-    "status": true,
+    "status": 200,
+    "success": true,
     "data": {
       "_id": "task-id",
       "title": "My Task",
       "description": "This is a task description",
-      "dueDate": "2024-09-23T00:00:00Z",
-      "status": "pending"
+      "dueDate": "RFC 3339 Date-Time Format",
+      "status": "pending",
+      "createdAt": "RFC 3339 Date-Time Format",
+      "updatedAt": "RFC 3339 Date-Time Format",
     }
   }
   ```
 
 ##### **PUT /task/updateTask/:id**
-- **Description**: Update the details of an existing task by its ID.
+- **Description**: Update the details of an existing task by its Id.
 - **Request Body**:
   ```json
   {
     "title": "Updated Task",
     "description": "Updated description",
+    "dueDate": "RFC 3339 Date-Time Format",
     "status": "completed"
   }
   ```
@@ -179,7 +203,10 @@ Refer To The Provided .env.sample File
       "_id": "task-id",
       "title": "Updated Task",
       "description": "Updated description",
+      "dueDate": "RFC 3339 Date-Time Format",
       "status": "completed"
+      "createdAt": "RFC 3339 Date-Time Format",
+      "updatedAt": "RFC 3339 Date-Time Format",
     }
   }
   ```
@@ -189,7 +216,8 @@ Refer To The Provided .env.sample File
 - **Response**:
   ```json
   {
-    "status": true,
+    "status": 200,
+    "success": true,
     "message": "Task Deleted Successfully!"
   }
   ```
