@@ -67,12 +67,12 @@ Refer To The Provided .env.sample File
 ##### **POST /user/login**
 - **Description**: Log in a user and return a JWT token.
 - **Request Body**:
-  ```json
+  ```sh
   {
     "email": "john@example.com",
     "password": "Password@123"
   }
-    <!-- or -->
+      or
   {
     "userName": "johndoe",
     "password": "Password@123"
