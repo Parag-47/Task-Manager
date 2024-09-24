@@ -79,7 +79,7 @@ Refer To The Provided .env.sample File
   }
   ```
 - **Response**:
-  ```sh
+  ```json
   {
     "statusCode": 200,
     "success": true,
