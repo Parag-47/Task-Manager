@@ -67,12 +67,12 @@ Refer To The Provided .env.sample File
 ##### **POST /user/login**
 - **Description**: Log in a user and return a JWT token.
 - **Request Body**:
-  ```sh
+  ```json
   {
     "email": "john@example.com",
     "password": "Password@123"
   }
-      or
+    or
   {
     "userName": "johndoe",
     "password": "Password@123"
@@ -98,8 +98,83 @@ Refer To The Provided .env.sample File
   }
   ```
 
+##### **POST /user/updateAccountInfo**
+- **Description**: Update the user's account information.
+- **Request Body**:
+  ```json
+  {
+    "userName": "johndoe",
+    "email": "john@example.com"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "statusCode": 200,
+    "success": true,
+    "message": "User Details Updated Successfully!",
+    "data": {
+      "accessToken": "accessToken",
+      "refreshToken": "refreshToken",
+      "loggedInUser": {
+        "_id": "userId",
+        "userName": "johndoe",
+        "email": "john@example.com",
+        "createdAt": "RFC 3339 Date-Time Format",
+        "updatedAt": "RFC 3339 Date-Time Format"
+      }
+    }
+  }
+  ```
+
+##### **POST /user/updatePassword**
+- **Description**: Update the user's password.
+- **Request Body**:
+  ```json
+  {
+    "oldPassword": "oldPassword",
+    "newPassword": "newPassword",
+    "confirmPassword": "newPassword"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "statusCode": 200,
+    "success": true,
+    "message": "Password Updated Successfully!"
+  }
+  ```
+
+##### **GET /user/getCurrentUser**
+- **Description**: Fetch the currently logged-in user.
+- **Response**:
+  ```json
+  {
+    "statusCode": 200,
+    "success": true,
+    "message": "User Fetched Successfully!",
+    "data": {
+      "returns": "updated user details"
+    }
+  }
+  ```
+
+##### **GET /user/deleteAccount**
+- **Description**: Delete the user's account.
+- **Response**:
+  ```json
+  {
+    "statusCode": 200,
+    "success": true,
+    "message": "Account Deleted!"
+  }
+  ```
+
 ##### **GET /user/logout**
 - **Description**: Log out a user by invalidating their session.
+
+---
 
 ### **Task Endpoints**
 
