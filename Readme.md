@@ -1,10 +1,43 @@
-# Task Manager API
+# **Task Manager API**
 
-### Project Overview
+### **Description**
 
-The Task Manager API is designed to handle user authentication and task management functionalities. Users can register, log in, and manage their tasks by creating, updating, deleting, and viewing them. The API supports JWT-based authentication for secure access.
+Task Manager API is a robust backend application for managing tasks, projects, and users. It offers features like user authentication, task creation and user management. The API is designed to be secure, making use of Node.js, Express.js, MongoDB, and other modern backend technologies.
 
-### Installation Instructions
+---
+
+### **Features**
+
+- User Authentication (JWT-based)
+- Input Validation with AJV
+- Security best practices (Helmet, Express Mongo Sanitize, etc.)
+- Pagination for tasks.
+
+---
+
+### **Technologies Used**
+
+- **Node.js**: JavaScript runtime for server-side development
+- **Express.js**: Web framework for Node.js
+- **MongoDB**: NoSQL database for storing tasks, and user information
+- **JWT**: JSON Web Token for secure authentication
+- **AJV**: Schema-based data validation
+- **Helmet.js**: Secure HTTP headers for security best practices
+- **Bcrypt**: Password hashing for secure storage
+
+---
+
+### **Getting Started**
+
+Follow these instructions to set up the project locally.
+
+#### **Prerequisites**
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [MongoDB](https://www.mongodb.com/)
+- [AJV](https://ajv.js.org/)
+
+#### **Installation Instructions**
 
 Follow the steps below to clone the repository, install dependencies, and run the project locally:
 
@@ -22,7 +55,7 @@ npm install
 npm start
 ```
 
-### Environment Variables
+#### **Environment Variables**
 
 Ensure you have the environment variables set up for the project like:
 
@@ -34,270 +67,28 @@ JWT_SECRET=your_secret_key
 Refer To The Provided .env.sample File
 ```
 
-## Endpoints Documentation
+### **API Documentation**
+The API provides a set of RESTful endpoints for managing users and tasks, all responses are JSON-encoded.
+Read The API Documentation Provided In The Repo `Endpoint Documentation.md`.
 
-### **User Endpoints**
+#### **User Management**
+- POST /user/register – Register a new user
+- POST /user/login – Login a user and return JWT
+- GET /user/logout – Logout the user and invalidate the session
+- POST /user/updateAccountInfo – Update user's account information
+- POST /user/updatePassword – Update user's password
+- GET /user/getCurrentUser – Get the currently logged-in user
+- GET /user/refreshAccessToken – Refresh the user's access token
+- DELETE /user/deleteAccount – Delete the user's account
 
-##### **POST /user/register**
-- **Description**: Register a new user in the system.
-- **Request Body**:
-  ```json
-  {
-    "userName": "johndoe",
-    "email": "john@example.com",
-    "password": "Password@123"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "statusCode": 201,
-    "success": true,
-    "message": "User Registered Successfully!",
-    "data": {
-      "_id": "userId",
-      "userName": "johndoe",
-      "email": "john@example.com",
-      "createdAt": "RFC 3339 Date-Time Format",
-      "updatedAt": "RFC 3339 Date-Time Format"
-    }
-  }
-  ```
+#### **Task Management**
+- GET /task/getAllTasks?filters Fetch all tasks (supports filters like text search, pagination, status, sorting)
+- GET /task/getTaskById/:id – Get a task by its ID
+- POST /task/createTask – Create a new task
+- POST /task/updateTask/:id – Update a task by its ID
+- GET /task/deleteTask/:id – Delete a task by its ID
 
-##### **POST /user/login**
-- **Description**: Log in a user and return a JWT token.
-- **Request Body**:
-  ```sh
-  {
-    "email": "john@example.com",
-    "password": "Password@123"
-  }
-    or
-  {
-    "userName": "johndoe",
-    "password": "Password@123"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "User Logged In Successfully!",
-    "data": {
-      "accessToken": "accessToken",
-      "refreshToken": "refreshToken",
-      "loggedInUser": {
-        "_id": "userId",
-        "userName": "johndoe",
-        "email": "john@example.com",
-        "createdAt": "RFC 3339 Date-Time Format",
-        "updatedAt": "RFC 3339 Date-Time Format"
-      }
-    }
-  }
-  ```
-
-##### **POST /user/updateAccountInfo**
-- **Description**: Update the user's account information.
-- **Request Body**:
-  ```json
-  {
-    "userName": "johndoe",
-    "email": "john@example.com"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "User Details Updated Successfully!",
-    "data": {
-      "accessToken": "accessToken",
-      "refreshToken": "refreshToken",
-      "loggedInUser": {
-        "_id": "userId",
-        "userName": "johndoe",
-        "email": "john@example.com",
-        "createdAt": "RFC 3339 Date-Time Format",
-        "updatedAt": "RFC 3339 Date-Time Format"
-      }
-    }
-  }
-  ```
-
-##### **POST /user/updatePassword**
-- **Description**: Update the user's password.
-- **Request Body**:
-  ```json
-  {
-    "oldPassword": "oldPassword",
-    "newPassword": "newPassword",
-    "confirmPassword": "newPassword"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "Password Updated Successfully!"
-  }
-  ```
-
-##### **GET /user/getCurrentUser**
-- **Description**: Fetch the currently logged-in user.
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "User Fetched Successfully!",
-    "data": {
-      "returns": "updated user details"
-    }
-  }
-  ```
-
-##### **GET /user/deleteAccount**
-- **Description**: Delete the user's account.
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "Account Deleted!"
-  }
-  ```
-
-##### **GET /user/logout**
-- **Description**: Log out a user by invalidating their session.
-
----
-
-### **Task Endpoints**
-
-##### **POST /task/createTask**
-- **Description**: Create a new task for the authenticated user.
-- **Request Body**:
-  ```json
-  {
-    "title": "My Task",
-    "description": "This is a task description",
-    "dueDate": "RFC 3339 Date-Time Format",
-    "status": "pending"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "statusCode": 201,
-    "success": true,
-    "message": "Task Created Successfully!",
-    "data": {
-      "_id": "taskId",
-      "title": "My Task",
-      "description": "This is a task description",
-      "dueDate": "RFC 3339 Date-Time Format",
-      "status": "pending"
-    }
-  }
-  ```
-
-##### **GET /task/getAllTasks**
-- **Description**: Retrieve paginated tasks based on the passed filters like: `search, page, limit, status, sortBy, sortType`
-- **Response**:
-  ```json
-  {
-    "statusCode": 200,
-    "success": true,
-    "message": "OK",
-    "data": {
-      "docs": [
-        {
-          "_id": "taskId",
-          "title": "go for a walk",
-          "description": "trying to stay fit :)",
-          "status": "pending",
-          "dueDate": "RFC 3339 Date-Time Format",
-          "createdAt": "RFC 3339 Date-Time Format",
-          "updatedAt": "RFC 3339 Date-Time Format",
-          "score": 1.5
-        }
-      ],
-    "totalDocs": 1,
-    "limit": 5,
-    "page": 1,
-    "totalPages": 1,
-    "pagingCounter": 1,
-    "hasPrevPage": false,
-    "hasNextPage": false,
-    "prevPage": null,
-    "nextPage": null
-    }
-  }
-  ```
-
-##### **GET /task/getTaskById/:taskId**
-- **Description**: Retrieve a specific task by its Id.
-- **Response**:
-  ```json
-  {
-    "status": 200,
-    "success": true,
-    "data": {
-      "_id": "task-id",
-      "title": "My Task",
-      "description": "This is a task description",
-      "dueDate": "RFC 3339 Date-Time Format",
-      "status": "pending",
-      "createdAt": "RFC 3339 Date-Time Format",
-      "updatedAt": "RFC 3339 Date-Time Format",
-    }
-  }
-  ```
-
-##### **PUT /task/updateTask/:id**
-- **Description**: Update the details of an existing task by its Id.
-- **Request Body**:
-  ```json
-  {
-    "title": "Updated Task",
-    "description": "Updated description",
-    "dueDate": "RFC 3339 Date-Time Format",
-    "status": "completed"
-  }
-  ```
-- **Response**:
-  ```json
-  {
-    "status": true,
-    "message": "Task Updated Successfully!",
-    "data": {
-      "_id": "task-id",
-      "title": "Updated Task",
-      "description": "Updated description",
-      "dueDate": "RFC 3339 Date-Time Format",
-      "status": "completed"
-      "createdAt": "RFC 3339 Date-Time Format",
-      "updatedAt": "RFC 3339 Date-Time Format",
-    }
-  }
-  ```
-
-##### **DELETE /task/deleteTask/:id**
-- **Description**: Delete a specific task by its ID.
-- **Response**:
-  ```json
-  {
-    "status": 200,
-    "success": true,
-    "message": "Task Deleted Successfully!"
-  }
-  ```
-
-### Data Validation with AJV
+### **Data Validation with AJV**
 
 AJV is used for validating the input data (e.g., task creation, update requests). For instance, during task creation, the following schema ensures the correct data types and structure:
 
@@ -314,10 +105,12 @@ AJV is used for validating the input data (e.g., task creation, update requests)
 }
 ```
 
-### EDR Diagram
+### **EDR Diagram**
 Check out the Entity-Relationship Diagram (ERD) for the Task Manager API [here](https://app.eraser.io/workspace/LkEp2wbNih6azcR73Ms3?origin=share&elements=Gj9AGlSlYBvAOFvQxkizag).
 
-### Testing Instructions
+![](https://app.eraser.io/workspace/LkEp2wbNih6azcR73Ms3/preview?elements=Gj9AGlSlYBvAOFvQxkizag&type=embed)
+
+### **Testing Instructions**
 
 You can test the API endpoints using Postman by importing the collection found in the `Task Manager.postman_collection.json` file.
 
