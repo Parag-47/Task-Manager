@@ -66,6 +66,7 @@ JWT_SECRET=your_secret_key
 
 Refer To The Provided .env.sample File
 ```
+---
 
 ### **API Documentation**
 The API provides a set of RESTful endpoints for managing users and tasks, all responses are JSON-encoded.
@@ -87,6 +88,7 @@ Read The API Documentation Provided In The Repo `Endpoint Documentation.md`.
 - POST /task/createTask – Create a new task
 - POST /task/updateTask/:id – Update a task by its ID
 - GET /task/deleteTask/:id – Delete a task by its ID
+---
 
 ### **Data Validation with AJV**
 
@@ -104,13 +106,16 @@ AJV is used for validating the input data (e.g., task creation, update requests)
   "required": ["title", "dueDate"]
 }
 ```
+---
 
 ### **EDR Diagram**
 Check out the Entity-Relationship Diagram (ERD) for the Task Manager API [here](https://app.eraser.io/workspace/LkEp2wbNih6azcR73Ms3?origin=share&elements=Gj9AGlSlYBvAOFvQxkizag).
 
 ![](https://app.eraser.io/workspace/LkEp2wbNih6azcR73Ms3/preview?elements=Gj9AGlSlYBvAOFvQxkizag&type=embed)
 
-### **Testing Instructions**
+---
+
+### **Endpoint Testing Instructions**
 
 You can test the API endpoints using Postman by importing the collection found in the `Task Manager.postman_collection.json` file.
 
